@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_aba2763d5f40dc6dccea37c543327f29 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+     <div style="position: fixed; 
+     bottom: 50px; left: 50px; width: 250px; height: 90px; 
+     background-color: white; z-index:9999; font-size:14px;
+     border:2px solid grey; border-radius:6px; padding: 10px;">
+     <i class="fa fa-circle" style="color:blue"></i> Focos <br>
+     <i class="fa fa-circle" style="color:red"></i> Superficie Afectada (ha)
+     </div>
+     
+    
+     <h3 align="center" style="font-size:20px"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Distribución geográfica de las provincias argentinas con focos y superficie afectada por incendios.</b></h3>
+     
+    
+            <div class="folium-map" id="map_aba2763d5f40dc6dccea37c543327f29" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_aba2763d5f40dc6dccea37c543327f29 = L.map(
+                "map_aba2763d5f40dc6dccea37c543327f29",
+                {
+                    center: [-38.4161, -63.6167],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_041ff74aa2cc47ebf01af3c0640d0058 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_041ff74aa2cc47ebf01af3c0640d0058.addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var circle_marker_de0b0d6114f09de50a7552f4f864460d = L.circleMarker(
+                [-34.6037181, -58.38153],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.1, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_4b230b2a13a4876d3f20dce489b5fe6d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1ea7bdca81ffc0ac7b2ba4d6443405a9 = $(`<div id="html_1ea7bdca81ffc0ac7b2ba4d6443405a9" style="width: 100.0%; height: 100.0%;">Buenos Aires: 1 Focos</div>`)[0];
+                popup_4b230b2a13a4876d3f20dce489b5fe6d.setContent(html_1ea7bdca81ffc0ac7b2ba4d6443405a9);
+            
+        
+
+        circle_marker_de0b0d6114f09de50a7552f4f864460d.bindPopup(popup_4b230b2a13a4876d3f20dce489b5fe6d)
+        ;
+
+        
+    
+    
+            var circle_marker_3426e756b33b1afd7b5342b7e5b07602 = L.circleMarker(
+                [-34.6037181, -58.38153],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.4, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_9d1e78b802e1789b48a65f7c02a65901 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7c23f9d7fca551635ae5c691510e6ab5 = $(`<div id="html_7c23f9d7fca551635ae5c691510e6ab5" style="width: 100.0%; height: 100.0%;">Buenos Aires: 2400.0 ha afectadas</div>`)[0];
+                popup_9d1e78b802e1789b48a65f7c02a65901.setContent(html_7c23f9d7fca551635ae5c691510e6ab5);
+            
+        
+
+        circle_marker_3426e756b33b1afd7b5342b7e5b07602.bindPopup(popup_9d1e78b802e1789b48a65f7c02a65901)
+        ;
+
+        
+    
+    
+            var marker_cc61e3e1488822a72c1e4ac17060dda8 = L.marker(
+                [-34.6037181, -58.38153],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_98fdaf5c30444f2a2a5f8d2935d77aa9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eBuenos Aires\u003c/div\u003e"});
+            marker_cc61e3e1488822a72c1e4ac17060dda8.setIcon(div_icon_98fdaf5c30444f2a2a5f8d2935d77aa9);
+        
+    
+            var circle_marker_59a7720f86fdd1710404c06a7e44be24 = L.circleMarker(
+                [-43.7128356, -68.7461817],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.6, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_1868abd4196d0743cae943463f514315 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e528717d3af72b94a68956507eba765 = $(`<div id="html_7e528717d3af72b94a68956507eba765" style="width: 100.0%; height: 100.0%;">Chubut: 126 Focos</div>`)[0];
+                popup_1868abd4196d0743cae943463f514315.setContent(html_7e528717d3af72b94a68956507eba765);
+            
+        
+
+        circle_marker_59a7720f86fdd1710404c06a7e44be24.bindPopup(popup_1868abd4196d0743cae943463f514315)
+        ;
+
+        
+    
+    
+            var circle_marker_0daaa8d6496961cee60116d599f77d6d = L.circleMarker(
+                [-43.7128356, -68.7461817],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 49.375, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_d20bc43e20b40cbc649ee960d826230a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c2e606b41d68145f02715bf45ce3a700 = $(`<div id="html_c2e606b41d68145f02715bf45ce3a700" style="width: 100.0%; height: 100.0%;">Chubut: 49375.0 ha afectadas</div>`)[0];
+                popup_d20bc43e20b40cbc649ee960d826230a.setContent(html_c2e606b41d68145f02715bf45ce3a700);
+            
+        
+
+        circle_marker_0daaa8d6496961cee60116d599f77d6d.bindPopup(popup_d20bc43e20b40cbc649ee960d826230a)
+        ;
+
+        
+    
+    
+            var marker_b022232eaec3acf177ecf63cc1aa7f8a = L.marker(
+                [-43.7128356, -68.7461817],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_9d840d010b5699544423303a3725383e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eChubut\u003c/div\u003e"});
+            marker_b022232eaec3acf177ecf63cc1aa7f8a.setIcon(div_icon_9d840d010b5699544423303a3725383e);
+        
+    
+            var circle_marker_3bdd9058fc3c0b28643324876eff471f = L.circleMarker(
+                [-28.99565115, -57.81245796667342],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_d80a89eb2bce754bc17fb7268513bdd9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b046c2e3579f90b347144053eda40409 = $(`<div id="html_b046c2e3579f90b347144053eda40409" style="width: 100.0%; height: 100.0%;">Corrientes: 55 Focos</div>`)[0];
+                popup_d80a89eb2bce754bc17fb7268513bdd9.setContent(html_b046c2e3579f90b347144053eda40409);
+            
+        
+
+        circle_marker_3bdd9058fc3c0b28643324876eff471f.bindPopup(popup_d80a89eb2bce754bc17fb7268513bdd9)
+        ;
+
+        
+    
+    
+            var circle_marker_809d27833cc9d96ccf9e6a36e5608416 = L.circleMarker(
+                [-28.99565115, -57.81245796667342],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.498, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_5c9d940c21eed4af8d92bfc2ae532412 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_176c7aa0252131ba99c9f57cfce85695 = $(`<div id="html_176c7aa0252131ba99c9f57cfce85695" style="width: 100.0%; height: 100.0%;">Corrientes: 19498.0 ha afectadas</div>`)[0];
+                popup_5c9d940c21eed4af8d92bfc2ae532412.setContent(html_176c7aa0252131ba99c9f57cfce85695);
+            
+        
+
+        circle_marker_809d27833cc9d96ccf9e6a36e5608416.bindPopup(popup_5c9d940c21eed4af8d92bfc2ae532412)
+        ;
+
+        
+    
+    
+            var marker_674737d1046e8e17dc21edfe210c2fbb = L.marker(
+                [-28.99565115, -57.81245796667342],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_c659fbd1ff0ea0b875958eb82b02fb6d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eCorrientes\u003c/div\u003e"});
+            marker_674737d1046e8e17dc21edfe210c2fbb.setIcon(div_icon_c659fbd1ff0ea0b875958eb82b02fb6d);
+        
+    
+            var circle_marker_dc7a2673e8f2a7a48afb189b21c8ff88 = L.circleMarker(
+                [-31.4166867, -64.1834193],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.1, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_70879e2dd875575ecede3857d6c721ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be90f7af149ae50e9fef2b66532741e8 = $(`<div id="html_be90f7af149ae50e9fef2b66532741e8" style="width: 100.0%; height: 100.0%;">Córdoba: 1 Focos</div>`)[0];
+                popup_70879e2dd875575ecede3857d6c721ee.setContent(html_be90f7af149ae50e9fef2b66532741e8);
+            
+        
+
+        circle_marker_dc7a2673e8f2a7a48afb189b21c8ff88.bindPopup(popup_70879e2dd875575ecede3857d6c721ee)
+        ;
+
+        
+    
+    
+            var circle_marker_9486349159488aee3b9d63b3eb7f04b9 = L.circleMarker(
+                [-31.4166867, -64.1834193],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.05, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_570a2a1dbf269712d3903fc99de2f126 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9d84a7d9a90511bbc5db1f482fafd4c1 = $(`<div id="html_9d84a7d9a90511bbc5db1f482fafd4c1" style="width: 100.0%; height: 100.0%;">Córdoba: 50.0 ha afectadas</div>`)[0];
+                popup_570a2a1dbf269712d3903fc99de2f126.setContent(html_9d84a7d9a90511bbc5db1f482fafd4c1);
+            
+        
+
+        circle_marker_9486349159488aee3b9d63b3eb7f04b9.bindPopup(popup_570a2a1dbf269712d3903fc99de2f126)
+        ;
+
+        
+    
+    
+            var marker_7c2242a1cc04a5b4732acb9edd573911 = L.marker(
+                [-31.4166867, -64.1834193],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_f43529e7660f6e9cdb419a76486df4e3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eC\u00f3rdoba\u003c/div\u003e"});
+            marker_7c2242a1cc04a5b4732acb9edd573911.setIcon(div_icon_f43529e7660f6e9cdb419a76486df4e3);
+        
+    
+            var circle_marker_3e28581fa36ba8d796c34cf3497f62cb = L.circleMarker(
+                [-31.6252842, -59.3539578],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.8, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_69494b1c8b895865f6da0464294ddc7e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bb42a7914b0773c66dfd261382ffe614 = $(`<div id="html_bb42a7914b0773c66dfd261382ffe614" style="width: 100.0%; height: 100.0%;">Entre Ríos: 18 Focos</div>`)[0];
+                popup_69494b1c8b895865f6da0464294ddc7e.setContent(html_bb42a7914b0773c66dfd261382ffe614);
+            
+        
+
+        circle_marker_3e28581fa36ba8d796c34cf3497f62cb.bindPopup(popup_69494b1c8b895865f6da0464294ddc7e)
+        ;
+
+        
+    
+    
+            var circle_marker_037d3ab9ce483489614b4313bbc47e8e = L.circleMarker(
+                [-31.6252842, -59.3539578],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.061, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_a8d6cacbf8a9c91430ddd99f73e7d700 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cb8d0825ecdf5c0018a9bfdbdb38c1c6 = $(`<div id="html_cb8d0825ecdf5c0018a9bfdbdb38c1c6" style="width: 100.0%; height: 100.0%;">Entre Ríos: 2061.0 ha afectadas</div>`)[0];
+                popup_a8d6cacbf8a9c91430ddd99f73e7d700.setContent(html_cb8d0825ecdf5c0018a9bfdbdb38c1c6);
+            
+        
+
+        circle_marker_037d3ab9ce483489614b4313bbc47e8e.bindPopup(popup_a8d6cacbf8a9c91430ddd99f73e7d700)
+        ;
+
+        
+    
+    
+            var marker_bd4d51024ef5f74236b613853ca1fd69 = L.marker(
+                [-31.6252842, -59.3539578],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_6629622373a9b264ea7e2c27571d6f19 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eEntre R\u00edos\u003c/div\u003e"});
+            marker_bd4d51024ef5f74236b613853ca1fd69.setIcon(div_icon_6629622373a9b264ea7e2c27571d6f19);
+        
+    
+            var circle_marker_da7b27a0bad6315db481b39cd7119c9a = L.circleMarker(
+                [-23.3161458, -65.7595288],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_b6245ce13fed7c41127401f33fc1513b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_04d71c487c10ac64065924627409b750 = $(`<div id="html_04d71c487c10ac64065924627409b750" style="width: 100.0%; height: 100.0%;">Jujuy: 62 Focos</div>`)[0];
+                popup_b6245ce13fed7c41127401f33fc1513b.setContent(html_04d71c487c10ac64065924627409b750);
+            
+        
+
+        circle_marker_da7b27a0bad6315db481b39cd7119c9a.bindPopup(popup_b6245ce13fed7c41127401f33fc1513b)
+        ;
+
+        
+    
+    
+            var circle_marker_8246237e918de0d0acb1c94ed7a7c058 = L.circleMarker(
+                [-23.3161458, -65.7595288],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 37.792, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_359ea74d21a68bc2a2229f55646e49b9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_276c259829552c90037b5535251a5c78 = $(`<div id="html_276c259829552c90037b5535251a5c78" style="width: 100.0%; height: 100.0%;">Jujuy: 37792.0 ha afectadas</div>`)[0];
+                popup_359ea74d21a68bc2a2229f55646e49b9.setContent(html_276c259829552c90037b5535251a5c78);
+            
+        
+
+        circle_marker_8246237e918de0d0acb1c94ed7a7c058.bindPopup(popup_359ea74d21a68bc2a2229f55646e49b9)
+        ;
+
+        
+    
+    
+            var marker_bd2a6e9f710fb2a6d6d81b8f10005557 = L.marker(
+                [-23.3161458, -65.7595288],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_a3968400ec4283a7b485444f1b92deb6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eJujuy\u003c/div\u003e"});
+            marker_bd2a6e9f710fb2a6d6d81b8f10005557.setIcon(div_icon_a3968400ec4283a7b485444f1b92deb6);
+        
+    
+            var circle_marker_e8a876a3d38486073c29ef16bbc23f36 = L.circleMarker(
+                [-37.2314643, -65.3972948],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.3, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_7405b9397647692e7e6799c052d904ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92ca18ac77fd7b13588a30fa668ac3f8 = $(`<div id="html_92ca18ac77fd7b13588a30fa668ac3f8" style="width: 100.0%; height: 100.0%;">La Pampa: 3 Focos</div>`)[0];
+                popup_7405b9397647692e7e6799c052d904ee.setContent(html_92ca18ac77fd7b13588a30fa668ac3f8);
+            
+        
+
+        circle_marker_e8a876a3d38486073c29ef16bbc23f36.bindPopup(popup_7405b9397647692e7e6799c052d904ee)
+        ;
+
+        
+    
+    
+            var circle_marker_1efdeb18faed2f034f4b48b41fa82699 = L.circleMarker(
+                [-37.2314643, -65.3972948],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.025, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_0304d90dcb0f28161bd42a378db25f59 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_135a5503c701b26bf8cea4a30139efea = $(`<div id="html_135a5503c701b26bf8cea4a30139efea" style="width: 100.0%; height: 100.0%;">La Pampa: 25.0 ha afectadas</div>`)[0];
+                popup_0304d90dcb0f28161bd42a378db25f59.setContent(html_135a5503c701b26bf8cea4a30139efea);
+            
+        
+
+        circle_marker_1efdeb18faed2f034f4b48b41fa82699.bindPopup(popup_0304d90dcb0f28161bd42a378db25f59)
+        ;
+
+        
+    
+    
+            var marker_101c62c770923578ba58e0dde55e7f9a = L.marker(
+                [-37.2314643, -65.3972948],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_5ccf2a8f58a6d4bb81fa1993fcfb94e9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eLa Pampa\u003c/div\u003e"});
+            marker_101c62c770923578ba58e0dde55e7f9a.setIcon(div_icon_5ccf2a8f58a6d4bb81fa1993fcfb94e9);
+        
+    
+            var circle_marker_a28ea861cc7f421b0fe03c68f782d74e = L.circleMarker(
+                [-34.787093049999996, -68.43818677312292],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.0, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_db22abca04ec785bbbf83ca961930d8a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dfdbd9f1526157c060d56ca3a79c4af9 = $(`<div id="html_dfdbd9f1526157c060d56ca3a79c4af9" style="width: 100.0%; height: 100.0%;">Mendoza: 80 Focos</div>`)[0];
+                popup_db22abca04ec785bbbf83ca961930d8a.setContent(html_dfdbd9f1526157c060d56ca3a79c4af9);
+            
+        
+
+        circle_marker_a28ea861cc7f421b0fe03c68f782d74e.bindPopup(popup_db22abca04ec785bbbf83ca961930d8a)
+        ;
+
+        
+    
+    
+            var circle_marker_27e8276ee6a28e1514bd749d5b6af87f = L.circleMarker(
+                [-34.787093049999996, -68.43818677312292],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.13, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_65fa39fff3584972ec8c829f44cf1932 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0095074fcee46091fbe32331b2844910 = $(`<div id="html_0095074fcee46091fbe32331b2844910" style="width: 100.0%; height: 100.0%;">Mendoza: 10130.0 ha afectadas</div>`)[0];
+                popup_65fa39fff3584972ec8c829f44cf1932.setContent(html_0095074fcee46091fbe32331b2844910);
+            
+        
+
+        circle_marker_27e8276ee6a28e1514bd749d5b6af87f.bindPopup(popup_65fa39fff3584972ec8c829f44cf1932)
+        ;
+
+        
+    
+    
+            var marker_be9faabfea0df85264bdc48e185d5f18 = L.marker(
+                [-34.787093049999996, -68.43818677312292],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_5b067f9e58639e2598eff9881e391f56 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eMendoza\u003c/div\u003e"});
+            marker_be9faabfea0df85264bdc48e185d5f18.setIcon(div_icon_5b067f9e58639e2598eff9881e391f56);
+        
+    
+            var circle_marker_3c1eab1149e66652fa2484e7570c2c94 = L.circleMarker(
+                [-26.737224, -54.4315257],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.4, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_4d7bc18a31924adc77d489addac3b9b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c0e5ab4d250c13ea73f7bea248c87b03 = $(`<div id="html_c0e5ab4d250c13ea73f7bea248c87b03" style="width: 100.0%; height: 100.0%;">Misiones: 24 Focos</div>`)[0];
+                popup_4d7bc18a31924adc77d489addac3b9b1.setContent(html_c0e5ab4d250c13ea73f7bea248c87b03);
+            
+        
+
+        circle_marker_3c1eab1149e66652fa2484e7570c2c94.bindPopup(popup_4d7bc18a31924adc77d489addac3b9b1)
+        ;
+
+        
+    
+    
+            var circle_marker_8f6f2de813471298005cc2e928650ebb = L.circleMarker(
+                [-26.737224, -54.4315257],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.895, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_0e60b4f103b64c0ccb623df72c1ca2fd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_522c1ba106ff260c01060ffe167550ce = $(`<div id="html_522c1ba106ff260c01060ffe167550ce" style="width: 100.0%; height: 100.0%;">Misiones: 895.0 ha afectadas</div>`)[0];
+                popup_0e60b4f103b64c0ccb623df72c1ca2fd.setContent(html_522c1ba106ff260c01060ffe167550ce);
+            
+        
+
+        circle_marker_8f6f2de813471298005cc2e928650ebb.bindPopup(popup_0e60b4f103b64c0ccb623df72c1ca2fd)
+        ;
+
+        
+    
+    
+            var marker_ffd310eafee45fc36f550833aeff0f14 = L.marker(
+                [-26.737224, -54.4315257],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_f951389330fcb5158a0a9be47b4e24cb = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eMisiones\u003c/div\u003e"});
+            marker_ffd310eafee45fc36f550833aeff0f14.setIcon(div_icon_f951389330fcb5158a0a9be47b4e24cb);
+        
+    
+            var circle_marker_0606b0b5a47bd1bd2692226237a316f6 = L.circleMarker(
+                [-38.3695057, -69.832275],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.8, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_dff76494ef05b9379363edf12be14756 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc882b83dcd8c938418b69d049394edd = $(`<div id="html_fc882b83dcd8c938418b69d049394edd" style="width: 100.0%; height: 100.0%;">Neuquén: 88 Focos</div>`)[0];
+                popup_dff76494ef05b9379363edf12be14756.setContent(html_fc882b83dcd8c938418b69d049394edd);
+            
+        
+
+        circle_marker_0606b0b5a47bd1bd2692226237a316f6.bindPopup(popup_dff76494ef05b9379363edf12be14756)
+        ;
+
+        
+    
+    
+            var circle_marker_258a19bdd02c45bb6d1e670e2448383d = L.circleMarker(
+                [-38.3695057, -69.832275],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.501, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_78c7b8ee817bd528d561ada77fa3904b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f3287f9dc0e543b0049fdb3d26488dc0 = $(`<div id="html_f3287f9dc0e543b0049fdb3d26488dc0" style="width: 100.0%; height: 100.0%;">Neuquén: 5501.0 ha afectadas</div>`)[0];
+                popup_78c7b8ee817bd528d561ada77fa3904b.setContent(html_f3287f9dc0e543b0049fdb3d26488dc0);
+            
+        
+
+        circle_marker_258a19bdd02c45bb6d1e670e2448383d.bindPopup(popup_78c7b8ee817bd528d561ada77fa3904b)
+        ;
+
+        
+    
+    
+            var marker_8bc4c04d80cc341233d1df5bb3ec3344 = L.marker(
+                [-38.3695057, -69.832275],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_4438753389f596e293f6d884a70b75e3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eNeuqu\u00e9n\u003c/div\u003e"});
+            marker_8bc4c04d80cc341233d1df5bb3ec3344.setIcon(div_icon_4438753389f596e293f6d884a70b75e3);
+        
+    
+            var circle_marker_1df74faef1c7d846b4bb55e77bfc7685 = L.circleMarker(
+                [-40.4811973, -67.6145911],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 54.3, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_972b36469f5fdd78199e9685a3a9e7a1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_53db4c284f1270a95f5272cc7954d7e9 = $(`<div id="html_53db4c284f1270a95f5272cc7954d7e9" style="width: 100.0%; height: 100.0%;">Río Negro: 543 Focos</div>`)[0];
+                popup_972b36469f5fdd78199e9685a3a9e7a1.setContent(html_53db4c284f1270a95f5272cc7954d7e9);
+            
+        
+
+        circle_marker_1df74faef1c7d846b4bb55e77bfc7685.bindPopup(popup_972b36469f5fdd78199e9685a3a9e7a1)
+        ;
+
+        
+    
+    
+            var circle_marker_f85c18561f99e7a9a976afffe5f58867 = L.circleMarker(
+                [-40.4811973, -67.6145911],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.712, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_5610aa8d948bf3bb26adf5536679a7ef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e933ddbac057b4c71f5100e7d4e6b35b = $(`<div id="html_e933ddbac057b4c71f5100e7d4e6b35b" style="width: 100.0%; height: 100.0%;">Río Negro: 8712.0 ha afectadas</div>`)[0];
+                popup_5610aa8d948bf3bb26adf5536679a7ef.setContent(html_e933ddbac057b4c71f5100e7d4e6b35b);
+            
+        
+
+        circle_marker_f85c18561f99e7a9a976afffe5f58867.bindPopup(popup_5610aa8d948bf3bb26adf5536679a7ef)
+        ;
+
+        
+    
+    
+            var marker_03a570c3dcd1cd0b3d60a106a492d0cf = L.marker(
+                [-40.4811973, -67.6145911],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_6f1a8550be2ee8fc0390c59e55983ce6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eR\u00edo Negro\u003c/div\u003e"});
+            marker_03a570c3dcd1cd0b3d60a106a492d0cf.setIcon(div_icon_6f1a8550be2ee8fc0390c59e55983ce6);
+        
+    
+            var circle_marker_b9548e8286d36dde1fefecb13e237786 = L.circleMarker(
+                [-30.7054363, -69.1988222],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.2, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_50518e0f843f19a7cb33b02a66b1f8df = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6834a6262cb9e4aab8ab657a0c64d878 = $(`<div id="html_6834a6262cb9e4aab8ab657a0c64d878" style="width: 100.0%; height: 100.0%;">San Juan: 2 Focos</div>`)[0];
+                popup_50518e0f843f19a7cb33b02a66b1f8df.setContent(html_6834a6262cb9e4aab8ab657a0c64d878);
+            
+        
+
+        circle_marker_b9548e8286d36dde1fefecb13e237786.bindPopup(popup_50518e0f843f19a7cb33b02a66b1f8df)
+        ;
+
+        
+    
+    
+            var circle_marker_6cb6fd1a56972e9efa4a206d617d1165 = L.circleMarker(
+                [-30.7054363, -69.1988222],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.005, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_d1c60a26f13e890a2a195c0355d5b704 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4b05e91e8369ea0018096fd9a00b231a = $(`<div id="html_4b05e91e8369ea0018096fd9a00b231a" style="width: 100.0%; height: 100.0%;">San Juan: 5.0 ha afectadas</div>`)[0];
+                popup_d1c60a26f13e890a2a195c0355d5b704.setContent(html_4b05e91e8369ea0018096fd9a00b231a);
+            
+        
+
+        circle_marker_6cb6fd1a56972e9efa4a206d617d1165.bindPopup(popup_d1c60a26f13e890a2a195c0355d5b704)
+        ;
+
+        
+    
+    
+            var marker_966b4fcbcdd43bba875a5523e9dff85b = L.marker(
+                [-30.7054363, -69.1988222],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_c66f380b8804eb4159294a42dc3318a5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eSan Juan\u003c/div\u003e"});
+            marker_966b4fcbcdd43bba875a5523e9dff85b.setIcon(div_icon_c66f380b8804eb4159294a42dc3318a5);
+        
+    
+            var circle_marker_67b188834601362d9403363c258d5eb4 = L.circleMarker(
+                [-26.5643582, -64.882397],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.2, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_fb84cbefdc72f8f6846a187d85064ad5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c59d913832c1a4c470d56a05c2794fef = $(`<div id="html_c59d913832c1a4c470d56a05c2794fef" style="width: 100.0%; height: 100.0%;">Tucuman: 2 Focos</div>`)[0];
+                popup_fb84cbefdc72f8f6846a187d85064ad5.setContent(html_c59d913832c1a4c470d56a05c2794fef);
+            
+        
+
+        circle_marker_67b188834601362d9403363c258d5eb4.bindPopup(popup_fb84cbefdc72f8f6846a187d85064ad5)
+        ;
+
+        
+    
+    
+            var circle_marker_1cbc5a7dbdc4a93f2525afb409396601 = L.circleMarker(
+                [-26.5643582, -64.882397],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.002, "stroke": true, "weight": 3}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+        var popup_01c47b81681ebd25529c684cc713ba73 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3493bc537f0ca435089555fc9f126911 = $(`<div id="html_3493bc537f0ca435089555fc9f126911" style="width: 100.0%; height: 100.0%;">Tucuman: 2.0 ha afectadas</div>`)[0];
+                popup_01c47b81681ebd25529c684cc713ba73.setContent(html_3493bc537f0ca435089555fc9f126911);
+            
+        
+
+        circle_marker_1cbc5a7dbdc4a93f2525afb409396601.bindPopup(popup_01c47b81681ebd25529c684cc713ba73)
+        ;
+
+        
+    
+    
+            var marker_d5b5f57a001bbad92b75bc5db8387877 = L.marker(
+                [-26.5643582, -64.882397],
+                {}
+            ).addTo(map_aba2763d5f40dc6dccea37c543327f29);
+        
+    
+            var div_icon_c9850e32fcdfc7afb53dfd05f6887cc9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; color: white;\"\u003eTucuman\u003c/div\u003e"});
+            marker_d5b5f57a001bbad92b75bc5db8387877.setIcon(div_icon_c9850e32fcdfc7afb53dfd05f6887cc9);
+        
+</script>
+</html>
